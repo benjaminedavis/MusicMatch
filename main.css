@@ -1,0 +1,72 @@
+#logo {
+  text-align: center;
+  font-size: 60px;
+}
+
+#objective {
+  text-align: center;
+  font-size: 20px;
+}
+
+#rules {
+  font-size: 15px;
+  text-align: center;
+}
+
+#playerround {
+  width: 400px;
+  height: 35px;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 0 auto;
+  box-shadow: 8px 8px 3px grey;
+}
+
+#playerbutton {
+  font-size: 15px;
+  font-weight: bolder;
+  width: 80px;
+  height: 23px;
+  margin-left: 35px;
+  margin-top: 6px;
+  float: left;
+}
+
+#roundbutton {
+  font-size: 15px;
+  font-weight: bolder;
+  width: 80px;
+  height: 23px;
+  margin-right: 35px;
+  margin-top: 6px;
+  float: right;
+}
+
+#albumcontainer {
+  width: 695px;
+  height: 200px;
+  padding: 15px 15px 15px 15px;
+  border-radius: 15px;
+  border: 2px solid black;
+  margin: 0 auto;
+  box-shadow: 8px 8px 3px grey;
+}
+
+.albums {
+    padding: 10px 10px 10px 10px;
+    width:150px;
+    height:150px;
+    overflow:hidden;
+}
+
+#startbutton {
+  width: 100px;
+  height: 40px;
+  font-size: 13px;
+  font-weight: bolder;
+  margin: 3px 3px 3px 3px;
+  border-radius: 10px;
+  border: 2px solid black;
+  box-shadow: 2px 2px 4px grey;
+  margin-left: 490px;
+}
