@@ -66,6 +66,11 @@ img {
   font-weight: 900;
 }
 
+#audioplayer {
+  display: none;
+  margin-left: 405px;
+}
+
 #startbutton {
   width: 100px;
   height: 40px;
@@ -75,7 +80,7 @@ img {
   border-radius: 10px;
   border: 2px solid black;
   box-shadow: 2px 2px 4px grey;
-  margin-left: 490px;
+  margin-left: 500px;
 }
 
 .showscore {

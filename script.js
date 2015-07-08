@@ -1,4 +1,3 @@
-
 var albumImages = ["https://upload.wikimedia.org/wikipedia/en/2/27/ABBA_-_The_Album_%28Polar%29.jpg",
                   "https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg",
                   "https://upload.wikimedia.org/wikipedia/en/f/fb/FMacRumours.PNG",
@@ -25,76 +24,62 @@ var albumImages = ["https://upload.wikimedia.org/wikipedia/en/2/27/ABBA_-_The_Al
                   "https://upload.wikimedia.org/wikipedia/en/7/7d/Turbonegro-ApocalypseDudes.jpg",
                   "https://upload.wikimedia.org/wikipedia/en/7/79/King_of_the_Road_%28album%29.jpg",];
 
-var songFiles = ["https://www.youtube.com/watch?v=-crgQGdpZR0",
-                 "https://www.youtube.com/watch?v=3fIqq5XVFKQ",
-                 "https://www.youtube.com/watch?v=mrZRURcb1cM",
-                 "https://www.youtube.com/watch?v=XTUi9l84fRw",
-                 "https://www.youtube.com/watch?v=gREtMOpY2u8",
-                 "https://www.youtube.com/watch?v=l9vVlZ978kU",
-                 "https://www.youtube.com/watch?v=G6gQrCVHbv4",
-                 "https://www.youtube.com/watch?v=OUpP02enWgU",
-                 "https://www.youtube.com/watch?v=GV__2dftHmQ",
-                 "https://www.youtube.com/watch?v=QFx5tP8JdPI",
-                 "https://www.youtube.com/watch?v=Vh6qu9cAGf4",
-                 "https://www.youtube.com/watch?v=324darD4SRs",
-                 "https://www.youtube.com/watch?v=p3vovAWG5MM",
-                 "https://www.youtube.com/watch?v=gqwuGTOs1jo",
-                 "https://www.youtube.com/watch?v=07Y0cy-nvAg",
-                 "https://www.youtube.com/watch?v=xhlX1Piko1o",
-                 "https://www.youtube.com/watch?v=6IJCFc_qkHw",
-                 "https://www.youtube.com/watch?v=E1fzJ_AYajA",
-                 "https://www.youtube.com/watch?v=qCGbfjuG5dA",
-                 "https://www.youtube.com/watch?v=qTrIrqoZu-A",
-                 "https://www.youtube.com/watch?v=4PvN7ujfj2w",
-                 "https://www.youtube.com/watch?v=aP5ikQpTR3c",
-                 "https://www.youtube.com/watch?v=zo-x4PU8S6g",
-                 "https://www.youtube.com/watch?v=Y7Z85NkN6v0",
-                 "https://www.youtube.com/watch?v=_Zko7pBeHkk",];
-
 function shuffleAlbum(){
         var randomNumber = Math.floor(Math.random()*25);
-        var url = albumImages[randomNumber];
-        return url;
-    };
-
-function shuffleSong(){
-         var randomNumber = Math.floor(Math.random()*25);
-         var url = songFiles[randomNumber];
-         return url;
-    };
+        var randomAlbum = albumImages[randomNumber];
+        return randomAlbum;
+   };
 
 var albumPos1 = document.querySelector("#album1");
 var albumPos2 = document.querySelector("#album2");
 var albumPos3 = document.querySelector("#album3");
 var albumPos4 = document.querySelector("#album4");
+
 var startButton = document.querySelector("#startbutton");
+var albumArray = [];
 
 startButton.addEventListener('click', function(){
-
-  for (i=o;i<3;i++){
-    albumArray.push(shuffleAlbum());
-  }
-
-  function checkDupeAlbum(){
-  var albumArray = [];
-    if(  !=== )
+  createRandomAlbumArray();
+  console.log(albumArray);
+  if ((albumArray[0] != albumArray[1]) && (albumArray[1] != albumArray[2]) &&
+  (albumArray[2] != albumArray[3])){
     albumPos1.setAttribute("src", albumArray[0]);
     albumPos2.setAttribute("src", albumArray[1]);
     albumPos3.setAttribute("src", albumArray[2]);
     albumPos4.setAttribute("src", albumArray[3]);
-  });
+}else{
+  albumArray = [];
+  createRandomAlbumArray();
 }
+});
+
+function createRandomAlbumArray(){
+
+      for (var i=0; i<=3 ;i++){
+        albumArray.push(shuffleAlbum());
+      };
+
+};
 
 
-// function hideInstructions();
-// function hideStartButton();
-// function startSong();
-// function selectImage();
-// function displayCorrectWrong();
-// function logPoint();
-// function showPlayAgain();
 
-var roundCounter = 1; //might need to start at 0
+var songFiles = ["audio/Death Grips - Get Got.mp3",
+                 "audio/Death Grips - Guillotine.mp3",
+                 "audio/Death Grips - I've Seen Footage.mp3",
+                 "audio/Death Grips - Takyon (Death Yon).mp3",
+                 "audio/Death Grips - The Fever (Aye Aye).mp3",];
+
+function shuffleSong(){
+         var randomNumber = Math.floor(Math.random()*5);
+         var randomSong = songFiles[randomNumber];
+         return randomSong;
+    };
+
+var songPlay = document.querySelector("#audioplayer");
+
+
+
+var roundCount = 1;
 var playerCount = 1;
 var player1Score = 0;
 var player2Score = 0;
