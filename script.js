@@ -40,9 +40,9 @@ var albumArray = [];
 
 startButton.addEventListener('click', function(){
   createRandomAlbumArray();
-  console.log(albumArray);
-  if ((albumArray[0] != albumArray[1]) && (albumArray[1] != albumArray[2]) &&
-  (albumArray[2] != albumArray[3])){
+  if ((albumArray[0] != albumArray[1]) && (albumArray[0] != albumArray[2]) &&
+  (albumArray[0] != albumArray[3]) && (albumArray[1] != albumArray[2]) &&
+  (albumArray[1] != albumArray[3]) && (albumArray[2] != albumArray[3])){
     albumPos1.setAttribute("src", albumArray[0]);
     albumPos2.setAttribute("src", albumArray[1]);
     albumPos3.setAttribute("src", albumArray[2]);
@@ -54,11 +54,9 @@ startButton.addEventListener('click', function(){
 });
 
 function createRandomAlbumArray(){
-
       for (var i=0; i<=3 ;i++){
         albumArray.push(shuffleAlbum());
       };
-
 };
 
 
