@@ -23,19 +23,21 @@
       </div> -->
 
 <div class="container" id="albumcontainer">
-  <img class="albums" id="album1" src="" alt="GOOD" />
-  <img class="albums" id="album2" src="" alt="LUCK" />
-  <img class="albums" id="album3" src="" alt="GOOD" />
-  <img class="albums" id="album4" src="" alt="LUCK" />
+  <img class="albums" id="album1" src="" alt="GOOD" onclick="albumClick(0)"/>
+  <img class="albums" id="album2" src="" alt="LUCK" onclick="albumClick(1)"/>
+  <img class="albums" id="album3" src="" alt="GOOD" onclick="albumClick(2)"/>
+  <img class="albums" id="album4" src="" alt="LUCK" onclick="albumClick(3)"/>
 </div>
 
 <br>
 
 <div id="audioplayer">
-<audio src="" controls="" autoplay></audio>
+<audio id="audiosource" src="" controls="" autoplay></audio>
 </div>
 
 <button id="startbutton">Start Game</button>
+
+<p id="correctwrong"></p>
 
 <script src="script.js" charset="utf-8"></script>
 

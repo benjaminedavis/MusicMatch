@@ -1,5 +1,5 @@
 
-var randomAlbumandSongs = [];//this will be an array of randomly selected objects
+var randomAlbumandSongs = [];
 
 var allObjects = {
   selections: [
@@ -141,9 +141,10 @@ var albumPos1 = document.querySelector("#album1");
 var albumPos2 = document.querySelector("#album2");
 var albumPos3 = document.querySelector("#album3");
 var albumPos4 = document.querySelector("#album4");
-
+var audioSource = document.querySelector("#audiosource");
 var startButton = document.querySelector("#startbutton");
-
+var currentSong = Math.floor((Math.random() * 3) + 1);
+var correctWrong = document.querySelector("#correctwrong");
 var albumArray = [];
 
 startButton.addEventListener('click', function(){
@@ -157,10 +158,7 @@ function createRandomAlbumArray(){
 }
       console.log(allAlbumImages);
       console.log("The number of album imgs: " + allAlbumImages.length);
-      //research how to shuffle an array in javascript
-      //after you shuffle you can just take whatever 4 elements
-      //from the array. everytime you shuffle you're guaranteed
-      //to get a new order
+
 function shuffle(createRandomAlbumArray) {
     var copy = [], n = createRandomAlbumArray.length, i;
     while (n) {
@@ -168,42 +166,27 @@ function shuffle(createRandomAlbumArray) {
       copy.push(createRandomAlbumArray.splice(i, 1)[0]);
   }
   copy = copy.slice(0,4);
-    console.log(copy);
-  return copy;
+  albumPos1.setAttribute("src", copy[0].albumImage);
+  albumPos2.setAttribute("src", copy[1].albumImage);
+  albumPos3.setAttribute("src", copy[2].albumImage);
+  albumPos4.setAttribute("src", copy[3].albumImage);
+
+  audioSource.setAttribute("src", copy[currentSong].songs[0]);
 };
 shuffle(allAlbumImages);
-
-      // return allAlbumImages;//returns all images regardless of length
 };
 
-// for(var i=0;i<4;i++){
-// arr[i].songs;
-// console.log(arr[i].songs);
-// }
-//this for loop will grab the songs from the fake 'arr' array
-
-
-
-// function shuffleSong(){
-//          var randomNumber = Math.floor(Math.random()*4);
-//          var randomSong = songFiles[randomNumber];
-//          return randomSong;
-//     };
-//
-// var songPlay = document.querySelector("#audioplayer");
-// audioplayer.setAttribute("src", randomSong());
+function albumClick(indexNumbers) {
+  if (currentSong === indexNumbers) {
+    correctWrong.innerHTML = "Correct Answer!";
+  }else {
+    correctWrong.innerHTML = "Wrong Answer!";;
+  }
+};
 
 var player1Score = 0;
 var player2Score = 0;
 var gameOver = false;
-
-// function answerMessage() {
-//   if (answer is right){
-//   document.write("<p class='correctwrong'>Correct Answer!</p>");
-// }   else {
-//   document.write("<p class='correctwrong'>Wrong Answer!</p>");
-// }
-// }:
 
 function getWinner() {
   if (gameOver === true && player1Score > player2Score){
