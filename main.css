@@ -79,11 +79,18 @@ img {
   margin: 3px 3px 3px 3px;
   border-radius: 10px;
   border: 2px solid black;
-  box-shadow: 2px 2px 4px grey;
-  margin-left: 500px;
+  box-shadow: 2px 2px 4px;
+  margin-left: 526px;
+  outline: none;
 }
 
 .showscore {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.correctwrong {
   text-align: center;
   font-size: 50px;
   font-weight: bolder;
