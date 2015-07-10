@@ -8,20 +8,14 @@
   <body>
 
 <div class="container" id="instructions">
-    <h1 id="logo">Music Match!</h1>
+    <h1 id="logo">Album Match!</h1>
       <h3 id="objective">Match The Song To The Album</h3>
         <h1 id="rules">Each player will be played 5 songs. Choose the album<br>
           each song appears on by clicking 1 of the 4 images below.<br>The
           player with the most correct answers wins.</h1>
 </div>
 
-      <br>
-
-      <!-- <div class="container" id="playerround">
-        <button id="playerbutton">Player 1</button>
-        <button id="roundbutton">Round 1</button>
-      </div> -->
-
+<p id="playerturn"></p>
 <div class="container" id="albumcontainer">
   <img class="albums" id="album1" src="" alt="GOOD" onclick="albumClick(0)"/>
   <img class="albums" id="album2" src="" alt="LUCK" onclick="albumClick(1)"/>
@@ -35,10 +29,10 @@
 <audio id="audiosource" src="" controls="" autoplay></audio>
 </div>
 
+<div id="buttondiv">
 <button id="startbutton">Start Game</button>
-<p id="playerturn"></p>
+</div>
 <p id="correctwrong"></p>
-
 <script src="script.js" charset="utf-8"></script>
 
   </body>

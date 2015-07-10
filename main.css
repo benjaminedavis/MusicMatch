@@ -71,6 +71,10 @@ img {
   margin-left: 405px;
 }
 
+#buttondiv {
+  text-align: center;
+}
+
 #startbutton {
   width: 100px;
   height: 40px;
@@ -80,7 +84,6 @@ img {
   border-radius: 10px;
   border: 2px solid black;
   box-shadow: 2px 2px 4px;
-  margin-left: 526px;
   outline: none;
 }
 
@@ -92,6 +95,12 @@ img {
 
 #correctwrong {
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+#playerturn {
+  text-align: center;
+  font-size: 30px;
   font-weight: bolder;
 }
